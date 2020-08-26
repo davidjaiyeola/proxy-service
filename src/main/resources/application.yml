@@ -14,8 +14,6 @@ spring:
             - Path=/facebook-graph/**
           filters:
             - RewritePath=/facebook-graph/(?<path>.*), /$\{path}
-
-
   management:
     endpoints:
       web:
