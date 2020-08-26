@@ -1,0 +1,23 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: facebook-service
+          uri: http://localhost:9081
+          predicates:
+            - Path=/facebook-service/**
+          filters:
+            - RewritePath=/facebook-service/(?<path>.*), /$\{path}
+        - id: facebook-graph
+          uri: https://graph.facebook.com
+          predicates:
+            - Path=/facebook-graph/**
+          filters:
+            - RewritePath=/facebook-graph/(?<path>.*), /$\{path}
+
+
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: "*"
