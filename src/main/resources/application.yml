@@ -14,6 +14,12 @@ spring:
             - Path=/facebook-graph/**
           filters:
             - RewritePath=/facebook-graph/(?<path>.*), /$\{path}
+        - id: facebook
+          uri: https://www.facebook.com
+          predicates:
+            - Path=/facebook/**
+          filters:
+            - RewritePath=/facebook/(?<path>.*), /$\{path}
   management:
     endpoints:
       web:
