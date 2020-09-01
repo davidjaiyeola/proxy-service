@@ -20,6 +20,12 @@ spring:
             - Path=/facebook/**
           filters:
             - RewritePath=/facebook/(?<path>.*), /$\{path}
+        - id: medium
+          uri: https://www.medium.com
+          predicates:
+            - Path=/medium/**
+          filters:
+            - RewritePath=/medium/(?<path>.*), /$\{path}
   management:
     endpoints:
       web:
