@@ -26,6 +26,15 @@ spring:
             - Path=/medium/**
           filters:
             - RewritePath=/medium/(?<path>.*), /$\{path}
+        - id: firebase
+          uri: https://identitytoolkit.googleapis.com
+          predicates:
+            - Path=/firebase/**
+          filters:
+            - RewritePath=/firebase/(?<path>.*), /$\{path}
+
+#logging:
+#  level:
   management:
     endpoints:
       web:
