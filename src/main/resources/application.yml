@@ -23,9 +23,15 @@ spring:
         - id: medium
           uri: https://www.medium.com
           predicates:
-            - Path=/random/**
+            - Path=/medium/**
           filters:
-            - RewritePath=/random/(?<path>.*), /$\{path}
+            - RewritePath=/medium/(?<path>.*), /$\{path}
+        - id: medium-api
+          uri: https://api.medium.com
+          predicates:
+            - Path=/medium-api/**
+          filters:
+            - RewritePath=/medium-api/(?<path>.*), /$\{path}
         - id: firebase
           uri: https://identitytoolkit.googleapis.com
           predicates:
